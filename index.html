@@ -1,32 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Random Obama Quote</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin-top: 100px;
-    }
-    button {
-      padding: 12px 20px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    #quote {
-      margin-top: 30px;
-      font-size: 22px;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Obama Generator</title>
+
+<style>
+body{
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg,#1e3c72,#2a5298);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+.container{
+  text-align:center;
+  max-width:700px;
+  padding:40px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+  margin-bottom:30px;
+}
+
+.quote{
+  font-size:26px;
+  line-height:1.4;
+  margin-bottom:30px;
+  min-height:80px;
+  transition:opacity 0.2s ease;
+}
+
+button{
+  padding:14px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:white;
+  color:#1e3c72;
+  font-weight:600;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.hidden{
+  display:none;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>Obama Generator</h1>
-<button onclick="randomQuote()">Give me one</button>
+<div class="container">
 
-<div id="quote"></div>
+<h1>Obama Generator</h1>
+
+<div id="quote" class="quote"></div>
+
+<button id="startBtn" onclick="randomQuote()">Generate Obama</button>
+<button id="nextBtn" class="hidden" onclick="randomQuote()">Give me another one</button>
+
+</div>
 
 <script>
+
 const quotes = [
 "Almost Transparent Obama: let me be sheer",
 "Metamorphosized into a saline water Obama: let me be tear",
@@ -61,10 +109,23 @@ const quotes = [
 "Obama as water in Malaysia: uhhh let me be air"
 ];
 
-function randomQuote() {
-  const q = quotes[Math.floor(Math.random() * quotes.length)];
-  document.getElementById("quote").textContent = q;
+function randomQuote(){
+
+const random = quotes[Math.floor(Math.random()*quotes.length)];
+
+const quoteBox = document.getElementById("quote");
+quoteBox.style.opacity = 0;
+
+setTimeout(()=>{
+  quoteBox.textContent = random;
+  quoteBox.style.opacity = 1;
+},150);
+
+document.getElementById("startBtn").classList.add("hidden");
+document.getElementById("nextBtn").classList.remove("hidden");
+
 }
+
 </script>
 
 </body>
