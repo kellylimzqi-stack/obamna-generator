@@ -127,6 +127,13 @@ gap:14px;
 align-items:center;
 }
 
+.logo{
+width:72px;
+height:72px;
+object-fit:contain;
+margin-bottom:6px;
+}
+
 @media (max-width:650px){
 
 .container{
@@ -151,6 +158,7 @@ font-size:22px;
 <div class="container">
 
   <div class="header">
+    <img src="obama.png" id="logo" class="logo">
     <h1>Obama Generator</h1>
     <p class="subtitle">real quotes by obma YES YES</p>
   </div>
@@ -289,7 +297,8 @@ const box=document.getElementById("quote");
 document.getElementById("startBtn").classList.add("hidden");
 document.getElementById("footer").classList.remove("hidden");
 document.querySelector(".container").classList.add("expanded");
-
+document.getElementById("logo").classList.add("hidden");
+  
 box.classList.remove("hidden");
 
 /* typing animation */
