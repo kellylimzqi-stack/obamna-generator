@@ -18,8 +18,9 @@ background:#9DD9ED;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+min-height:100vh;
 text-align:center;
+padding:20px;
 }
 
 .container{
@@ -114,28 +115,6 @@ background:#eee;
 display:none;
 }
 
-@media (max-width:650px){
-
-.container{
-width:90%;
-height:420px;
-}
-  
-h1{
-margin:0;
-font-size:38px;
-}
-
-.subtitle{
-margin:0;
-font-size:14px;
-opacity:.6;
-}
-  
-.quote{
-font-size:22px;
-}
-
 .header{
 display:flex;
 flex-direction:column;
@@ -151,6 +130,20 @@ justify-content:flex-end;
 
 min-height:90px;
 }
+
+@media (max-width:650px){
+
+.container{
+width:90%;
+height:auto;
+min-height:320px;
+padding:30px 20px;
+}
+
+.quote{
+font-size:22px;
+}
+
 }
 
 
@@ -346,24 +339,25 @@ const quote=document.getElementById("quote").textContent;
 
 const shareText = quote + " — Obama Generator";
 
+const encoded = encodeURIComponent(shareText + " " + window.location.href);
+
 if(navigator.share){
-    
-    navigator.share({
-        title:"Obama Generator",
-        text:shareText,
-        url:window.location.href
-    });
+
+navigator.share({
+title:"Obama Generator",
+text:shareText,
+url:window.location.href
+});
 
 }else{
 
-    const encoded = encodeURIComponent(shareText);
-
-    const twitter = "https://twitter.com/intent/tweet?text=" + encoded;
-    const whatsapp = "https://wa.me/?text=" + encoded;
-
-    window.open(twitter,"_blank");
+window.open(
+"https://twitter.com/intent/tweet?text=" + encoded,
+"_blank"
+);
 
 }
+
 }
   
 </script>
