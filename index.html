@@ -150,23 +150,27 @@ font-size:22px;
 
 <div class="container">
 
-<div class="header">
-  <h1>Obama Generator</h1>
-  <p class="subtitle">real quotes by obma</p>
-</div>
-<div id="quote" class="quote hidden"></div>
-
-<button id="startBtn" onclick="randomQuote()">generate obama</button>
-
-<div class="footer hidden" id="footer">
-  <div class="buttons">
-    <button id="nextBtn" onclick="randomQuote()">give me another one</button>
-    <button id="copyBtn" onclick="copyQuote()">copy quote</button>
-    <button id="shareBtn" onclick="shareQuote()">share quote</button>
+  <div class="header">
+    <h1>Obama Generator</h1>
+    <p class="subtitle">real quotes by obma</p>
   </div>
-</div>
+
+  <div id="quote" class="quote hidden"></div>
+
+  <!-- Only this button is visible initially -->
+  <button id="startBtn" onclick="randomQuote()">generate obama</button>
+
+  <!-- Footer stays hidden until randomQuote() runs -->
+  <div class="footer hidden" id="footer">
+    <div class="buttons">
+      <button id="nextBtn" onclick="randomQuote()">give me another one</button>
+      <button id="copyBtn" onclick="copyQuote()">copy quote</button>
+      <button id="shareBtn" onclick="shareQuote()">share quote</button>
+    </div>
+  </div>
 
 </div>
+
 
 <script>
 
