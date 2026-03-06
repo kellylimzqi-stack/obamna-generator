@@ -5,6 +5,9 @@
 <title>Obama Generator</title>
 <link rel="icon" type="image/png" href="obama.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta property="og:title" content="Obama Generator">
+<meta property="og:description" content="real quotes by obma">
+<meta property="og:image" content="obama.png">
 
 <style>
 
@@ -170,6 +173,7 @@ min-height:90px;
   <div class="buttons hidden" id="buttonGroup">
     <button id="nextBtn" onclick="randomQuote()">give me another one</button>
     <button id="copyBtn" onclick="copyQuote()">copy quote</button>
+    <button id="shareBtn" onclick="shareQuote()">share quote</button>
   </div>
 </div>
 
@@ -334,7 +338,32 @@ btn.textContent="copied 👍";
 setTimeout(()=>{
 btn.textContent="copy quote";
 },1200);
+}
 
+function shareQuote(){
+
+const quote=document.getElementById("quote").textContent;
+
+const shareText = quote + " — Obama Generator";
+
+if(navigator.share){
+    
+    navigator.share({
+        title:"Obama Generator",
+        text:shareText,
+        url:window.location.href
+    });
+
+}else{
+
+    const encoded = encodeURIComponent(shareText);
+
+    const twitter = "https://twitter.com/intent/tweet?text=" + encoded;
+    const whatsapp = "https://wa.me/?text=" + encoded;
+
+    window.open(twitter,"_blank");
+
+}
 }
   
 </script>
