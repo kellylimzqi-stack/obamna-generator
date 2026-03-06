@@ -158,8 +158,8 @@ font-size:22px;
 
 <button id="startBtn" onclick="randomQuote()">generate obama</button>
 
-<div class="footer hidden" id="footer">
-  <div class="buttons" id="buttonGroup">
+<div class="footer">
+  <div class="buttons hidden" id="buttonGroup">
     <button id="nextBtn" onclick="randomQuote()">give me another one</button>
     <button id="copyBtn" onclick="copyQuote()">copy quote</button>
     <button id="shareBtn" onclick="shareQuote()">share quote</button>
@@ -283,7 +283,7 @@ const q=remaining.splice(i,1)[0];
 const box=document.getElementById("quote");
 
 document.getElementById("startBtn").classList.add("hidden");
-document.getElementById("footer").classList.remove("hidden");
+document.getElementById("buttonGroup").classList.remove("hidden");
 document.querySelector(".container").classList.add("expanded");
 
 box.classList.remove("hidden");
