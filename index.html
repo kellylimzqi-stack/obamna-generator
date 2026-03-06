@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Obama Quote</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #quote {
+      margin-top: 30px;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Obama Generator</h1>
+<button onclick="randomQuote()">Give me one</button>
+
+<div id="quote"></div>
+
+<script>
+const quotes = [
+"Almost Transparent Obama: let me be sheer",
+"Metamorphosized into a saline water Obama: let me be tear",
+"Obama at a horror house: uhhhhh let me be fear",
+"Obama as a prey animal in a temperate rainforest: uhhhh let me be deer",
+"lgbtq obama: uhhh let me be queer",
+"Obama a little annoyed: uhhhhh let me be sneer",
+"Humble obama: uhhhh let me be mere",
+"Alcoholic Obama: uhhhhhh let me be Beer",
+"Obama reviewing a paper: uhhh let me be peer",
+"Obama in the corporate world: uhhhhh let me be gear",
+"Obama at the dentist: uhhh let me be veneer",
+"Obama as the helmsman of the exploratory vessel that voyaged to America: uhhhh let me be steer",
+"Obama being present: uhhhh let me be here",
+"Obama being present: uhhhh let me be near",
+"Obama finger painting: uhhh let me be smear",
+"Obama enjoying his favorite sport: uhhhhh let me be cheer",
+"Chef obama: uhhh let me be sear",
+"Oracle obame: uhhhh let me be seer",
+"Obama listening: uhhh let me be ear",
+"Neo pronoun obama: uuuuhhh let me be zir",
+"Obama respresenting a bunch of ppl: uhhh let me be we're",
+"obama off course: uhhhh let me be veer",
+"Bottom obama: uhhhh let me be rear",
+"weaponized Obama: uhhhh let me be spear",
+"Obama as 365 days: uhhh let me be year",
+"Orb-ama: Uhhh let me be sphere",
+"Obama when he needs more wool: uhhhh let me be shear",
+"Obama when he knows I need a friend: uhhhh lemme be peer",
+"Precious Obama: uhhh let me be dear",
+"Obama incensing the house: uhhhh let me be myrrh",
+"Obama as water in Malaysia: uhhh let me be air"
+];
+
+function randomQuote() {
+  const q = quotes[Math.floor(Math.random() * quotes.length)];
+  document.getElementById("quote").textContent = q;
+}
+</script>
+
+</body>
+</html>
