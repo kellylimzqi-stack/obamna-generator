@@ -330,7 +330,11 @@ box.textContent=q;
 
 function copyQuote(){
 
-const text=document.getElementById("quote").textContent;
+const quote = document.getElementById("quote").textContent;
+const url = "https://obamna-generator.pages.dev/";
+
+const text = quote + " — Obama Generator\n" + url;
+
 navigator.clipboard.writeText(text);
 
 const btn=document.getElementById("copyBtn");
@@ -340,13 +344,14 @@ btn.textContent="copied 👍";
 setTimeout(()=>{
 btn.textContent="copy quote";
 },1200);
+
 }
 
 function shareQuote(){
 
 const quote=document.getElementById("quote").textContent;
 const shareText = quote + " — Obama Generator";
-const url = "https://obamna-generator.pages.dev/";;
+const url = "https://obamna-generator.pages.dev/";
 
 /* detect mobile */
 
