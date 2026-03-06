@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Obama Generator</title>
+
+<style>
+body{
+  margin:0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(135deg,#1e3c72,#2a5298);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+}
+
+.container{
+  text-align:center;
+  max-width:700px;
+  padding:40px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+h1{
+  margin-bottom:30px;
+}
+
+.quote{
+  font-size:26px;
+  line-height:1.4;
+  margin-bottom:30px;
+  min-height:80px;
+  transition:opacity 0.2s ease;
+}
+
+button{
+  padding:14px 28px;
+  font-size:18px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:white;
+  color:#1e3c72;
+  font-weight:600;
+}
+
+button:hover{
+  transform:scale(1.05);
+}
+
+.hidden{
+  display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Obama Generator</h1>
+
+<div id="quote" class="quote"></div>
+
+<button id="startBtn" onclick="randomQuote()">Generate Obama</button>
+<button id="nextBtn" class="hidden" onclick="randomQuote()">Give me another one</button>
+
+</div>
+
+<script>
+
+const quotes = [
+"Almost Transparent Obama: let me be sheer",
+"Metamorphosized into a saline water Obama: let me be tear",
+"Obama at a horror house: uhhhhh let me be fear",
+"Obama as a prey animal in a temperate rainforest: uhhhh let me be deer",
+"lgbtq obama: uhhh let me be queer",
+"Obama a little annoyed: uhhhhh let me be sneer",
+"Humble obama: uhhhh let me be mere",
+"Alcoholic Obama: uhhhhhh let me be Beer",
+"Obama reviewing a paper: uhhh let me be peer",
+"Obama in the corporate world: uhhhhh let me be gear",
+"Obama at the dentist: uhhh let me be veneer",
+"Obama as the helmsman of the exploratory vessel that voyaged to America: uhhhh let me be steer",
+"Obama being present: uhhhh let me be here",
+"Obama being present: uhhhh let me be near",
+"Obama finger painting: uhhh let me be smear",
+"Obama enjoying his favorite sport: uhhhhh let me be cheer",
+"Chef obama: uhhh let me be sear",
+"Oracle obame: uhhhh let me be seer",
+"Obama listening: uhhh let me be ear",
+"Neo pronoun obama: uuuuhhh let me be zir",
+"Obama respresenting a bunch of ppl: uhhh let me be we're",
+"obama off course: uhhhh let me be veer",
+"Bottom obama: uhhhh let me be rear",
+"weaponized Obama: uhhhh let me be spear",
+"Obama as 365 days: uhhh let me be year",
+"Orb-ama: Uhhh let me be sphere",
+"Obama when he needs more wool: uhhhh let me be shear",
+"Obama when he knows I need a friend: uhhhh lemme be peer",
+"Precious Obama: uhhh let me be dear",
+"Obama incensing the house: uhhhh let me be myrrh",
+"Obama as water in Malaysia: uhhh let me be air"
+];
+
+function randomQuote(){
+
+const random = quotes[Math.floor(Math.random()*quotes.length)];
+
+const quoteBox = document.getElementById("quote");
+quoteBox.style.opacity = 0;
+
+setTimeout(()=>{
+  quoteBox.textContent = random;
+  quoteBox.style.opacity = 1;
+},150);
+
+document.getElementById("startBtn").classList.add("hidden");
+document.getElementById("nextBtn").classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
